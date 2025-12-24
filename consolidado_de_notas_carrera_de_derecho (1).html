@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consolidado de Notas - Derecho</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('images.jfif') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 700px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2, h3 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background: #3498db;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background: #2980b9; }
+    .notas { margin-top: 25px; display: none; }
+    table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+    table, th, td { border: 1px solid #ccc; }
+    th, td { padding: 8px; text-align: center; }
+    th { background: #ecf0f1; }
+    .promedio {
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div style="text-align:center; margin-bottom:15px;">
+      <img src="LOGO-HORIZONTAL.jpg" alt="UPLA" style="max-width:220px;" />
+      <h2>UNIVERSIDAD PERUANA LOS ANDES</h2>
+    </div>
+
+    <div id="login">
+      <label for="dni">DNI</label>
+      <input type="text" id="dni" placeholder="Ingrese su DNI" />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" placeholder="Ingrese su contraseña" />
+
+      <button onclick="ingresar()">Ingresar</button>
+    </div>
+
+    <div class="notas" id="notas">
+      <h3>CONSOLIDADO DE NOTAS - DERECHO</h3>
+      <div style="text-align:right; margin-bottom:10px;">
+        <button onclick="window.print()" style="width:auto; padding:8px 15px; font-size:14px;">🖨️ Descargar / Imprimir</button>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <p style="font-weight:bold;">Alumno: GERARDO ALEXIS TAIPE AYME<br/>Ciclo I – Carrera de Derecho<br/>DNI: 60254738 &nbsp;|&nbsp; Código: U75459</p>
+        <div style="width:90px; height:110px; border:1px solid #999; text-align:center;">
+          <img src="WhatsApp Image 2025-12-03 at 9.42.35 AM.jpg" alt="Foto Alumno" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+      </div>
+      <p style="text-align:center; font-weight:bold;">Alumno: GERARDO ALEXIS TAIPE AYME<br/>Ciclo I – Carrera de Derecho</p>
+      <table>
+        <tr>
+          <th>Curso</th>
+          <th>P1</th>
+          <th>Parcial</th>
+          <th>P2</th>
+          <th>Final</th><th>Estado</th>
+        </tr>
+        <tr><td>Economía</td><td>13</td><td>16</td><td>11</td><td>15</td><td>APROBADO</td></tr>
+        <tr><td>Redacción y Elocución</td><td>12</td><td>18</td><td>16</td><td>14</td><td>APROBADO</td></tr>
+        <tr><td>Ajedrez</td><td>15</td><td>15</td><td>15</td><td>15</td><td>APROBADO</td></tr>
+        <tr><td>Matemática</td><td>13</td><td>15</td><td>14</td><td>16</td><td>APROBADO</td></tr>
+        <tr><td>Introducción al Derecho</td><td>16</td><td>17</td><td>17</td><td>17</td><td>APROBADO</td></tr>
+      </table>
+
+      <div class="promedio">Promedio Ponderado Final: <strong>14.59999</strong></div>
+      <hr style="margin-top:20px;" />
+      <p style="text-align:center; font-style:italic; font-size:13px;">“¡Excelencia Administrativa y Contable para el Mundo!”</p>
+    </div>
+  </div>
+
+  <script>
+  function ingresar() {
+    const dni = document.getElementById('dni').value;
+    const password = document.getElementById('password').value;
+
+    if (dni === '60254738' && password === '60254738') {
+      document.getElementById('login').style.display = 'none';
+      document.getElementById('notas').style.display = 'block';
+    } else {
+      alert('DNI o contraseña incorrectos');
+    }
+  }
+</script>
+</body>
+</html>
